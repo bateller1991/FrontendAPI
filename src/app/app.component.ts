@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthenticationService } from './authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FrontendAPI';
+
+  constructor(private authenticationService: AuthenticationService, private router: Router) { }
+
+  signOut() {
+    this.authenticationService.logout().subscribe(() => {
+      this.router.navigate(['/sign-in']);
+    });
+  }
 }

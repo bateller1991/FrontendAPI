@@ -1,0 +1,17 @@
+.home-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.dropdown-container {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}

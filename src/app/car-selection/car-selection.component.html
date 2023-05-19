@@ -1,0 +1,12 @@
+<div class="car-selection-container">
+    <div class="dropdown-container">
+      <label for="body-style">Select Body Style:</label>
+      <select id="body-style" [(ngModel)]="selectedBodyStyle" (change)="onBodyStyleSelect()">
+        <option *ngFor="let bodyStyle of bodyStyles" [value]="bodyStyle">{{ bodyStyle }}</option>
+      </select>
+    </div>
+    <ul>
+      <li *ngFor="let car of cars">{{ car.name }}</li>
+    </ul>
+  </div>
+  

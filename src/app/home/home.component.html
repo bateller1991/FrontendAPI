@@ -1,0 +1,15 @@
+<div class="home-container">
+  <h2>Welcome to the Home Page</h2>
+  <div class="dropdown-container">
+    <label for="bodyStyle">Select Body Style:</label>
+    <select id="bodyStyle" name="bodyStyle" [(ngModel)]="selectedBodyStyle" (change)="onBodyStyleChange()">
+      <option *ngFor="let style of bodyStyles" [value]="style.id">{{ style.name }}</option>
+    </select>
+  </div>
+  <div *ngIf="selectedBodyStyle">
+    <h3>Cars with Body Style: {{ getBodyStyleName(selectedBodyStyle) }}</h3>
+    <ul>
+      <li *ngFor="let car of filteredCars">{{ car.name }}</li>
+    </ul>
+  </div>
+</div>
